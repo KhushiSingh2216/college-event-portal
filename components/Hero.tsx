@@ -1,3 +1,5 @@
+import Link from "next/link";
+
 export default function Hero() {
   return (
     <section className="flex min-h-[80vh] flex-col items-center justify-center bg-blue-50 px-6 text-center">
@@ -11,13 +13,19 @@ export default function Hero() {
       </p>
 
       <div className="mt-10 flex gap-4">
-        <button className="rounded-lg bg-blue-600 px-8 py-3 text-white hover:bg-blue-700">
+        <Link
+          href="/events"
+          className="rounded-lg bg-blue-600 px-8 py-3 text-white hover:bg-blue-700 transition"
+        >
           Explore Events
-        </button>
+        </Link>
 
-        <button className="rounded-lg border border-blue-600 px-8 py-3 text-blue-600 hover:bg-blue-100">
+        <Link
+          href="/login"
+          className="rounded-lg border border-blue-600 px-8 py-3 text-blue-600 hover:bg-blue-100 transition"
+        >
           Learn More
-        </button>
+        </Link>
       </div>
     </section>
   );
