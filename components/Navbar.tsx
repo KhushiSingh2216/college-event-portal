@@ -1,19 +1,38 @@
+import Link from "next/link";
+
 export default function Navbar() {
   return (
     <nav className="flex items-center justify-between bg-white px-10 py-5 shadow-md">
-      <h1 className="text-2xl font-bold text-blue-600">
+      <Link
+        href="/"
+        className="text-2xl font-bold text-blue-600"
+      >
         EventHub
-      </h1>
+      </Link>
 
-      <div className="flex gap-8">
-        <a href="#">Home</a>
-        <a href="#">Events</a>
-        <a href="#">Announcements</a>
+      <div className="flex gap-8 font-medium">
+        <Link href="/" className="hover:text-blue-600">
+          Home
+        </Link>
+
+        <Link href="/events" className="hover:text-blue-600">
+          Events
+        </Link>
+
+        <Link
+          href="/dashboard/student"
+          className="hover:text-blue-600"
+        >
+          Announcements
+        </Link>
       </div>
 
-      <button className="rounded-lg bg-blue-600 px-5 py-2 text-white hover:bg-blue-700">
+      <Link
+        href="/login"
+        className="rounded-lg bg-blue-600 px-5 py-2 text-white hover:bg-blue-700 transition"
+      >
         Login
-      </button>
+      </Link>
     </nav>
   );
 }
